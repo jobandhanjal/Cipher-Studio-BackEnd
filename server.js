@@ -18,8 +18,12 @@ app.get('/', (req, res) => res.send('CipherStudio backend is running'));
 
 if (process.env.NODE_ENV !== 'test') {
   const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+  app.listen(PORT,
+     () => console.log(`Server listening on port ${PORT}`));
 }
+
+// Export the app for testing (so tests can require the Express app without starting the server)
+module.exports = app;
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err) => {

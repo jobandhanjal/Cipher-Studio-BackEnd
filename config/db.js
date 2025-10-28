@@ -15,7 +15,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log(`MongoDB connected successfully in ${env} mode`);
+    // console.log(`MongoDB connected successfully in ${env} mode`);
   } catch (error) {
     console.error('MongoDB connection error:', error);
     process.exit(1);
